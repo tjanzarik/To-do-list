@@ -1,0 +1,26 @@
+*{
+    padding: none;
+    margin: none;
+    box-sizing: border-box;
+}
+
+button{
+    all:unset;
+}
+
+ul{
+    list-style: none;
+}
+
+#firstelement{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cont-main{
+    width: 50%;
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
