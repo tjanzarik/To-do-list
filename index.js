@@ -52,8 +52,7 @@ addList.addEventListener("click",(event)=>{
 function createelement(element){
     let newele=document.createElement('li');
     newele.innerHTML="<div><input type='checkbox'>" +
-                        element +
-                          "</div><button><img class='btn' src='./img/trash-2.svg' alt='trash'></button>";
+                        element +"</div><button><img class='btn' src='./img/trash-2.svg' alt='trash'></button>";
     newele.style.display= "flex";
     newele.style.justifyContent="space-between";
     return   newele;             
@@ -83,10 +82,7 @@ function buttonWork(){
                 let num=arabtn.indexOf(btn);
                 toDoList.splice(num, 1);
                 btn.parentNode.parentNode.remove();
-                }
-                // 1.delte the thing in the list and than render 
-                // 2.delte the Node and the thing in the list   
-               )
+                })
             }
         )
 }
