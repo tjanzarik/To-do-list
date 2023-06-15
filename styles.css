@@ -8,6 +8,9 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background-image:url(https://live.staticflickr.com/4384/36508539602_efb2feeea9_h.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 button{
@@ -36,3 +39,4 @@ li{
     display: flex;
     justify-content: space-between;
 }
+

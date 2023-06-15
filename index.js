@@ -31,11 +31,19 @@
 //     }
 // );
 
-//Variable 
+// Variable 
+window.addEventListener("load",()=>
+{ 
+    render(toDoList);
+    buttonWork();
+    addEdit();
+}
+)
+
 const addList = document.getElementById("add-list")
 const ParentList=document.getElementById("parent-list")
 const form= document.getElementById("form")
-let toDoList=[]
+let toDoList=JSON.parse(localStorage.getItem('Todo'))
 
 //get the input and add other function  
 addList.addEventListener("click",(event)=>{
@@ -48,13 +56,39 @@ addList.addEventListener("click",(event)=>{
     render(toDoList);
     //delete the element in array and the list 
     buttonWork();
+    addEdit();
 })
+
+
+function addEdit(){
+    const allList=  document.querySelectorAll("li div span")
+
+    allList.forEach((ele)=>{
+        ele.contentEditable="True"
+    }
+    )
+    allList.forEach((ele,i)=>{
+        ele.addEventListener(
+            "input",()=>{
+                toDoList[i].value=ele.textContent 
+                ele.addEventListener("blur", ()=>{
+                render(toDoList)
+                buttonWork()
+                addEdit()
+                }
+                )
+                }
+            )
+        }
+    )
+}
+
 
 //create an element and style it  
 function createelement(element){
     let newele=document.createElement('li');
-    newele.innerHTML="<div>"+element.date+"<input type='checkbox'>" +
-                        element.value +"</div><button><img class='btn' src='./img/trash-2.svg' alt='trash'></button>";
+    newele.innerHTML="<div>"+element.date+"<input type='checkbox'><span>" +
+                        element.value +"</span></div><button><img class='btn' src='./img/trash-2.svg' alt='trash'></button>";
     return   newele;             
 }
 
@@ -64,6 +98,7 @@ function render(arr){
     arr.forEach((ele)=>{
     let newChild = createelement(ele);
     document.getElementById("parent-list").appendChild(newChild);
+    localStorage.setItem("Todo",JSON.stringify(arr))
     }
     )
 }
@@ -81,6 +116,9 @@ function buttonWork(){
                 let num=arabtn.indexOf(btn);
                 toDoList.splice(num, 1);
                 btn.parentNode.parentNode.remove();
+                render(toDoList)
+                buttonWork()
+                addEdit()
                 })
             }
         )
