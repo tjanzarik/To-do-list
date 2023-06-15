@@ -59,5 +59,7 @@ li{
 }
 
 .checkbox:checked{
-    text-decoration: line-through;
+    li {
+        text-decoration: line-through;
+    }
 }
