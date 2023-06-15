@@ -50,7 +50,7 @@ addList.addEventListener("click",(event)=>{
     event.preventDefault();
     let newdate=new Date();
     let stringdate=(newdate.getMonth()+1)+ "."+ newdate.getDate()+ "  ";
-    let newcontent={value:form.input.value,date:stringdate};
+    let newcontent={value:form.input.value,date:stringdate,check:false};
     toDoList.push(newcontent);
     //create the list 
     render(toDoList);

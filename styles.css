@@ -58,8 +58,5 @@ li{
     font-size: 1.5rem;
 }
 
-.checkbox:checked{
-    li {
-        text-decoration: line-through;
-    }
-}
+
+
