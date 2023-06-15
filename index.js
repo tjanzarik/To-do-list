@@ -40,7 +40,9 @@ let toDoList=[]
 //get the input and add other function  
 addList.addEventListener("click",(event)=>{
     event.preventDefault();
-    let newcontent=form.input.value;
+    let newdate=new Date();
+    let stringdate=(newdate.getMonth()+1)+ "."+ newdate.getDate()+ "  ";
+    let newcontent={value:form.input.value,date:stringdate};
     toDoList.push(newcontent);
     //create the list 
     render(toDoList);
@@ -51,8 +53,8 @@ addList.addEventListener("click",(event)=>{
 //create an element and style it  
 function createelement(element){
     let newele=document.createElement('li');
-    newele.innerHTML="<div><input type='checkbox'>" +
-                        element +"</div><button><img class='btn' src='./img/trash-2.svg' alt='trash'></button>";
+    newele.innerHTML="<div>"+element.date+"<input type='checkbox'>" +
+                        element.value +"</div><button><img class='btn' src='./img/trash-2.svg' alt='trash'></button>";
     newele.style.display= "flex";
     newele.style.justifyContent="space-between";
     return   newele;             
@@ -62,7 +64,8 @@ function createelement(element){
 function render(arr){
     ParentList.innerHTML="";
     arr.forEach((ele)=>{
-    console.log("what the element is " + ele)
+    console.log("what the element is " + ele.value)
+    console.log("what the element is " + ele.date)
     let newChild = createelement(ele);
     document.getElementById("parent-list").appendChild(newChild);
     }
