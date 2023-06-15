@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-   
+    <main class="cont-main">
+        <h1>To-do List</h1>
+        <form id="form">
+            <input id="input-list" name="input" type="text" placeholder="Add new things">
+            <button class="fa-sharp fa-solid fa-plus" id="add-list"></button>
+        </form>
+        <div>
+            <table>
+                <ul class="col-lg-6 show-up wow fadeInUp animated" id="parent-list">
+                </ul>
+            </table>
+        </div>
+    </main>
+    <script src="index.js"></script>
 </body>
 </html>
