@@ -40,3 +40,7 @@ li{
     justify-content: space-between;
 }
 
+
+
+span.checked{
+    text-decoration: line-through;}
