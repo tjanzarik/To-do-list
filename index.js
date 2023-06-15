@@ -55,8 +55,6 @@ function createelement(element){
     let newele=document.createElement('li');
     newele.innerHTML="<div>"+element.date+"<input type='checkbox'>" +
                         element.value +"</div><button><img class='btn' src='./img/trash-2.svg' alt='trash'></button>";
-    newele.style.display= "flex";
-    newele.style.justifyContent="space-between";
     return   newele;             
 }
 
@@ -64,8 +62,6 @@ function createelement(element){
 function render(arr){
     ParentList.innerHTML="";
     arr.forEach((ele)=>{
-    console.log("what the element is " + ele.value)
-    console.log("what the element is " + ele.date)
     let newChild = createelement(ele);
     document.getElementById("parent-list").appendChild(newChild);
     }

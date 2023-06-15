@@ -31,3 +31,8 @@ ul{
     flex-direction: column;
     text-align: center;
 }
+
+li{
+    display: flex;
+    justify-content: space-between;
+}
