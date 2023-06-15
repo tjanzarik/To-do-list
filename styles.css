@@ -6,11 +6,15 @@
 
 body{
     display: flex;
-    align-items: center;
     justify-content: center;
-    /* background-image:url(https://live.staticflickr.com/4384/36508539602_efb2feeea9_h.jpg); */
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(135deg, #df9bf0, #4a79d7);
+    color: white;
+    min-height:100vh;
+    border-radius: 10px;
+}
+
+h1{
+    font-size: 5rem;
 }
 
 button{
@@ -28,19 +32,32 @@ ul{
 
 .cont-main{
     width: 60%;
-    min-height:30rem;
-    border: solid;
+    /* border: solid; */
     display: flex;
     flex-direction: column;
     text-align: center;
+    height: auto;
+    border-radius: 5px;
 }
 
 li{
     display: flex;
     justify-content: space-between;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    padding: 1rem;
+    background-color: rgba(241, 241, 241, 0.157);
+    box-shadow: 5px 2px 2px rgba(114, 39, 219, 0.422);
 }
 
+#input-list{
+    border-radius: 10px;
+    width: 20rem;
+    height: 3rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
 
-
-span.checked{
-    text-decoration: line-through;}
+.checkbox:checked{
+    text-decoration: line-through;
+}

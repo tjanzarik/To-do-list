@@ -87,7 +87,7 @@ function addEdit(){
 //create an element and style it  
 function createelement(element){
     let newele=document.createElement('li');
-    newele.innerHTML="<div>"+element.date+"<input type='checkbox'><span>" +
+    newele.innerHTML="<div>"+element.date+"<input type='checkbox' class='checkbox'><span>" +
                         element.value +"</span></div><button><img class='btn' src='./img/trash-2.svg' alt='trash'></button>";
     return   newele;             
 }
